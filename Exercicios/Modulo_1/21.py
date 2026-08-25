@@ -1,0 +1,5 @@
+frase = str(input("Digite uma frase: "))
+frase = frase.upper()
+print(frase.count("A"))
+print(frase.find("A") + 1)
+print(f"A letra a aparece pela última vez na posição {frase.rfind("A") + 1}")
