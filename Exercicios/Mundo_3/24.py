@@ -40,9 +40,25 @@ print(f"{"Gols":>10}", end="")
 print(f"{"Total de gols feitos":>25}")
 print("-"*30)
 for pos, i in enumerate(time):
-    print(f"{pos+1:<10} {i['nome']:^5}      {i['gols']}       {i['total_gols']:^10}")
+    print(f"{pos+1:<10} {i['nome']:^5} {str(i['gols']):>10}", end="")
+    print(f"{i['total_gols']:>10}")
 print("-"*30)
 
+while True:
+            qts_levantamento = int(input("Mostrar o levantamento de qual jogador? (999 para sair) "))
+            if qts_levantamento == 999:
+                print("Ate mais!")
+                print("-"*30)
+                break 
+            indice = qts_levantamento - 1
+            if 0<= indice < len(time):
+                    print(f" -- LEVANTAMENTO DO JOGADOR {time[indice]['nome']}:")
+                    for pos, i in enumerate(time[indice]['gols']):
+                        print(f"   No jogo {pos + 1} fez {i} gols")
+                    print("-"*30)
+            else:
+                print(f"ERRO! Nao existe jogador com o codigo {qts_levantamento}")
+                print("-"*30)
 
 
 
